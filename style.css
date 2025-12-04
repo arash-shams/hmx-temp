@@ -1,0 +1,13 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#000; color:#0f0; font-family:'Vazirmatn',sans-serif; height:100vh; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.container { text-align:center; }
+.glitch { font-size:8rem; font-weight:900; text-transform:uppercase; position:relative; display:inline-block; }
+.glitch::before, .glitch::after { content:attr(data-text); position:absolute; top:0; left:0; width:100%; height:100%; }
+.glitch::before { animation:glitch-1 0.5s infinite; clip-path:polygon(0 0,100% 0,100% 35%,0 35%); }
+.glitch::after { animation:glitch-2 0.5s infinite; clip-path:polygon(0 65%,100% 65%,100% 100%,0 100%); }
+@keyframes glitch-1 { 0%,100%{transform:translate(0)} 20%{transform:translate(-5px,5px)} 40%{transform:translate(-5px,-5px)} 60%{transform:translate(5px,5px)} 80%{transform:translate(5px,-5px)} }
+@keyframes glitch-2 { 0%,100%{transform:translate(0)} 20%{transform:translate(5px,-5px)} 40%{transform:translate(5px,5px)} 60%{transform:translate(-5px,-5px)} 80%{transform:translate(-5px,5px)} }
+.subtitle { font-size:2rem; margin:2rem 0; opacity:0.8; }
+.progress-bar { width:400px; height:10px; background:#111; margin:0 auto; border-radius:5px; overflow:hidden; }
+.progress { width:0%; height:100%; background:linear-gradient(90deg,#0f0,#0ff); animation:load 4s infinite; }
+@keyframes load { 0%{width:0%} 100%{width:100%} }
